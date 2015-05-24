@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Seguridad
 {
-  public class Permiso
+  public class Perfil
   {
   }
 }
