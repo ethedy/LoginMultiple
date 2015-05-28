@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Servicios;
+
 namespace WinLogin
 {
   /// <summary>
@@ -24,5 +27,24 @@ namespace WinLogin
     {
       InitializeComponent();
     }
+
+    private void LoginIngresar(object sender, RoutedEventArgs e)
+    {
+      SecurityServices serv = new SecurityServices();
+
+      Sesion ses = serv.Login(txtUsuario.Text, txtPassword.Password);
+
+      if (ses == null)
+        MessageBox.Show("Error de credenciales...");
+      else
+      {
+        winMain wm = new winMain(ses);
+        
+        wm.Show();
+
+        Close();
+      }
+    }
+
   }
 }

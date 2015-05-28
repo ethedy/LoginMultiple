@@ -1,8 +1,24 @@
-﻿<Window x:Class="WinLogin.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-  <Grid>
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="WinLogin.MainWindow"
+        Title="Ingreso al Sistema" 
+        Height="250" Width="400" FontSize="14" ResizeMode="NoResize">
+  <DockPanel LastChildFill="False">
+    <StackPanel DockPanel.Dock="Bottom" 
+			Orientation="Horizontal" FlowDirection="RightToLeft">
+      <Button Content="Ingresar" Width="100" Margin="10" Padding="10" Click="LoginIngresar"/>
+      <Button Width="100" Margin="10" Padding="10" Content="Cancelar"/>
+    </StackPanel>
     
-  </Grid>
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
+      <Image Source="Imagenes/antivirus2.png"/>
+      <StackPanel>
+        <Label Content="Usuario"/>
+        <TextBox x:Name="txtUsuario" Width="200" Margin="10"/>
+        <Label Content="Password"/>
+        <PasswordBox x:Name="txtPassword" Width="200" Margin="10"/>
+      </StackPanel>
+    </StackPanel>
+  </DockPanel>
 </Window>
